@@ -90,7 +90,7 @@ public class StartUITest {
                         + "0. Edit item" + ln
                         + "1. Exit" + ln
                         + "=== Edit item ===" + ln
-                        + "Заявка изменена успешно." + ln
+                        + "Р—Р°СЏРІРєР° РёР·РјРµРЅРµРЅР° СѓСЃРїРµС€РЅРѕ." + ln
                         + "Menu." + ln
                         + "0. Edit item" + ln
                         + "1. Exit" + ln
