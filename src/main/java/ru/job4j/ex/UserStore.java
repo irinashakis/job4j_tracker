@@ -6,9 +6,11 @@ public class UserStore {
         for (User value : users) {
             if (value.getUsername().equals(login)) {
                 user = value;
-            } else {
-                throw new UserNotFoundException("User not found");
+                break;
             }
+        }
+        if (user == null) {
+            throw new UserNotFoundException("User not found");
         }
         return user;
     }
@@ -29,10 +31,10 @@ public class UserStore {
             if (validate(user)) {
                 System.out.println("This user has an access");
             }
+        } catch (UserInvalidException ui) {
+            ui.printStackTrace();
         } catch (UserNotFoundException uf) {
             uf.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
         }
     }
 }
