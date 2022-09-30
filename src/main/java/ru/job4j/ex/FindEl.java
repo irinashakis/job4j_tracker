@@ -6,13 +6,14 @@ public class FindEl {
         for (int index = 0; index < value.length; index++) {
             if (value[index].equals(key)) {
                 rsl = index;
+                break;
             }
         }
-            if (rsl == -1) {
+        if (rsl == -1) {
                 throw new ElementNotFoundException("Element not found");
-            }
-            return rsl;
         }
+        return rsl;
+    }
 
     public static void main(String[] args) {
         String[] value = {"Ok", "Hello", "Bye"};
