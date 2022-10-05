@@ -6,45 +6,30 @@ public class PasswordValidator {
         if (password == null) {
             throw new IllegalArgumentException("The password cannot be null");
         }
+        if (password.length() <= 8 || password.length() >= 32) {
+            throw new IllegalArgumentException("Invalid password length");
+        }
         for (int i = 0; i < password.length(); i++) {
             char ch = password.charAt(i);
             if (!Character.isUpperCase(ch)) {
-                rsl = "The password does not contain at least one uppercase character";
+                throw new IllegalArgumentException("The password does not contain at least one uppercase character");
             }
             if (!Character.isLowerCase(ch)) {
-                rsl = "The password does not contain at least one lowercase character";
+                throw new IllegalArgumentException("The password does not contain at least one lowercase character");
             }
             if (Character.isDigit(ch)) {
-                rsl = "The password does not contain a digit";
+                throw new IllegalArgumentException("The password does not contain a digit");
             }
-        }
-        if (!(password.contains("@") || password.contains("#")
-                || password.contains("!") || password.contains("~")
-                || password.contains("$") || password.contains("%")
-                || password.contains("^") || password.contains("&")
-                || password.contains("*") || password.contains("(")
-                || password.contains(")") || password.contains("-")
-                || password.contains("+") || password.contains("/")
-                || password.contains(":") || password.contains(".")
-                || password.contains(", ") || password.contains("<")
-                || password.contains(">") || password.contains("?")
-                || password.contains("|"))) {
-            rsl = "The password does not contain a special character";
+            if (Character.isUpperCase(ch) && Character.isLowerCase(ch) && Character.isDigit(ch)) {
+                throw new IllegalArgumentException("The password does not contain a special character");
+            }
         }
         String[] words = new String[]{"qwerty", "12345", "password", "admin", "user"};
         for (String word : words) {
             if (password.equalsIgnoreCase(word)) {
-                rsl = "Such a word cannot be used";
-                break;
+                throw new IllegalArgumentException("Such a word cannot be used");
             }
         }
-        if (password.length() <= 8 || password.length() >= 32) {
-            rsl = "Invalid password length";
-        }
         return rsl;
-    }
-
-    public static void main(String[] args) {
-        System.out.println(PasswordValidator.validate("Ky"));
     }
 }
