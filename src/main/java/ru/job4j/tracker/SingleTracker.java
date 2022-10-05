@@ -4,6 +4,8 @@ public final class SingleTracker {
 
     private static SingleTracker instance = null;
 
+    private Tracker tracker = new Tracker();
+
     private SingleTracker() {
     }
 
@@ -14,8 +16,6 @@ public final class SingleTracker {
         return instance;
     }
 
-    private Tracker tracker = new Tracker();
-
     public Item add(Item item) {
         return tracker.add(item);
     }
@@ -25,19 +25,19 @@ public final class SingleTracker {
     }
 
     public Item[] findByName(String key) {
-        return null;
+        return tracker.findByName(key);
         }
 
     public Item findById(int id) {
-        return null;
+        return tracker.findById(id);
     }
 
     public boolean replace(int id, Item item) {
-        return false;
+        return tracker.replace(id, item);
     }
 
     public boolean delete(int id) {
-        return false;
+        return tracker.delete(id);
     }
 }
 
