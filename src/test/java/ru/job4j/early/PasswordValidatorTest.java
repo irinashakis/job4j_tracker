@@ -84,4 +84,5 @@ class PasswordValidatorTest {
         String expected = "The password is valid";
         assertThat(result).isEqualTo(expected);
     }
+
 }
