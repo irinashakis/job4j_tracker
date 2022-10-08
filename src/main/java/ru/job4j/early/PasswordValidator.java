@@ -34,7 +34,7 @@ public class PasswordValidator {
             if (!Character.isUpperCase(ch) && !Character.isLowerCase(ch) && !Character.isDigit(ch)) {
                 checkS = true;
             }
-            if (checkU == checkL == checkD == checkS) {
+            if (checkU && checkL && checkD && checkS) {
                 break;
             }
         }

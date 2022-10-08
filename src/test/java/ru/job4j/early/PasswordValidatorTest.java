@@ -32,7 +32,7 @@ class PasswordValidatorTest {
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
                 () -> {
-                    PasswordValidator.validate("1hellO1234$");
+                    PasswordValidator.validate("1hello1234$");
                 });
         assertThat(exception.getMessage()).isEqualTo("The password does not contain at least one uppercase character");
     }
@@ -57,7 +57,7 @@ class PasswordValidatorTest {
         assertThat(exception.getMessage()).isEqualTo("The password does not contain a digit");
     }
 
-   /* @Test
+   @Test
     void whenExceptionSpecial() {
         IllegalArgumentException exception = assertThrows(
                 IllegalArgumentException.class,
@@ -65,7 +65,7 @@ class PasswordValidatorTest {
                     PasswordValidator.validate("hEllo123456");
                 });
         assertThat(exception.getMessage()).isEqualTo("The password does not contain a special character");
-    }*/
+    }
 
     @Test
     void whenExceptionWord() {
@@ -76,11 +76,12 @@ class PasswordValidatorTest {
                 });
         assertThat(exception.getMessage()).isEqualTo("Such a word cannot be used");
     }
-   /*@Test
+
+   @Test
     public void whenValid() {
         String in = "Hello1$$";
         String result = PasswordValidator.validate(in);
         String expected = "The password is valid";
         assertThat(result).isEqualTo(expected);
-    }*/
+    }
 }
