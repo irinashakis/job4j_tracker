@@ -55,7 +55,7 @@ public class TrackerTest {
         assertThat(newItems.get(1).getName()).isEqualTo(second.getName());
     }
 
-    /*@Test
+    @Test
     public void whenReplace() {
         Tracker tracker = new Tracker();
         Item bug = new Item();
@@ -66,7 +66,7 @@ public class TrackerTest {
         bugWithDesc.setName("Bug with description");
         tracker.replace(id, bugWithDesc);
         assertThat(tracker.findById(id).getName()).isEqualTo("Bug with description");
-    }*/
+    }
 
     @Test
     public void whenDelete() {

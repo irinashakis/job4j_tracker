@@ -23,7 +23,7 @@ public class StartUITest {
         assertThat(tracker.findAll().get(0).getName()).isEqualTo("Item name");
     }
 
-    /*@Test
+    @Test
     public void whenReplaceItem() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
@@ -38,7 +38,7 @@ public class StartUITest {
         );
         new StartUI(out).init(in, tracker, actions);
         assertThat(tracker.findById(item.getId()).getName()).isEqualTo(replacedName);
-    }*/
+    }
 
     @Test
     public void whenDeleteItem() {
@@ -74,7 +74,7 @@ public class StartUITest {
         );
     }
 
-    /*@Test
+    @Test
     public void whenReplaceItemTestOutputIsSuccessfully() {
         Output out = new StubOutput();
         Tracker tracker = new Tracker();
@@ -99,7 +99,7 @@ public class StartUITest {
                         + "0. Edit item" + ln
                         + "1. Exit" + ln
         );
-    }*/
+    }
 
     @Test
     public void whenFindAllItemTestOutputIsSuccessfully() {
