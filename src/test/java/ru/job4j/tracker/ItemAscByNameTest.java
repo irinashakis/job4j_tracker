@@ -19,5 +19,4 @@ class ItemAscByNameTest {
         items.sort(new ItemAscByName());
         assertThat(items).isEqualTo(expected);
     }
-
 }
